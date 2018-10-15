@@ -35,12 +35,12 @@ docker build -t docker-registry-cleaner -f Dockerfile.build .
 ### Example  
 CLI  
 ```
-docker-registry-cleaner --url https://<your-registry> --image development/myapp --keep 3 --imageversion "^1.0.*" --dry-run
+docker-registry-cleaner --path your-registry/repo/path --keep 3 --imageversion "^1.0.*" --dry-run
 ```
 
 Docker
 ```
-docker run -ti -e URL=https://<your-registry> -e IMAGE=releases/myapp -e IMAGE_VERSION=".*-TEST" -e DRYRUN=true thefoo/docker-registry-cleaner:latest
+docker run -it -e PATH=your-registry/repo/path -e IMAGE_VERSION=".*-TEST" -e DRYRUN=true this-image:latest
 ```
 
 ## Documentation
@@ -50,10 +50,9 @@ Simple app that hits the docker registry api to delete images.  This is usefully
 Available command line optoins  
 
 ```
-   --url value                       Registry url [$URL]
+   --path value                      Regular docker path '<registry>/repo/image' [$PATH]
    --username value, -u value        Registry username (optional) [$USERNAME]
    --password value, -p value        Registry password (optional) [$PASSWORD]
-   --image value, -i value           Image name to delete ie 'development/nginx' [$IMAGE]
    --imageversion value, --iv value  Image Version to delete, this can be a regex ".*-SNAPSHOT.*" (default: ".*-SNAPSHOT.*") [$IMAGE_VERSION]
    --keep value, -k value            The number of images you want to keep, usefully if you are deleting images by regex (default: 3) [$KEEP]
    --dryrun, -d                      Do not actually delete anything [$DRYRUN]

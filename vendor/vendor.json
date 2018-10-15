@@ -1,0 +1,141 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "IJfgr2GrcATr8H78epZaeoLzq+s=",
+			"path": "github.com/Sirupsen/logrus",
+			"revision": "458213699411cdceb6fd839a3178be49c01fba54",
+			"revisionTime": "2018-10-10T20:06:18Z"
+		},
+		{
+			"checksumSHA1": "1wtjU4A1TJw5mWf/8zQWXxgG/Hg=",
+			"path": "github.com/docker/distribution",
+			"revision": "a25b9ef0c9fe242ac04bb20d3a028442b7d266b6",
+			"revisionTime": "2017-04-05T23:17:09Z",
+			"version": "v2.6.1",
+			"versionExact": "v2.6.1"
+		},
+		{
+			"checksumSHA1": "0au+tD+jymXNssdb1JgcctY7PN4=",
+			"path": "github.com/docker/distribution/context",
+			"revision": "a25b9ef0c9fe242ac04bb20d3a028442b7d266b6",
+			"revisionTime": "2017-04-05T23:17:09Z",
+			"version": "v2.6.1",
+			"versionExact": "v2.6.1"
+		},
+		{
+			"checksumSHA1": "f1wARLDzsF/JoyN01yoxXEwFIp8=",
+			"path": "github.com/docker/distribution/digest",
+			"revision": "a25b9ef0c9fe242ac04bb20d3a028442b7d266b6",
+			"revisionTime": "2017-04-05T23:17:09Z",
+			"version": "v2.6.1",
+			"versionExact": "v2.6.1"
+		},
+		{
+			"checksumSHA1": "oYy5Q1HBImMQvh9t96cmNzWar80=",
+			"path": "github.com/docker/distribution/manifest",
+			"revision": "a25b9ef0c9fe242ac04bb20d3a028442b7d266b6",
+			"revisionTime": "2017-04-05T23:17:09Z",
+			"version": "v2.6.1",
+			"versionExact": "v2.6.1"
+		},
+		{
+			"checksumSHA1": "ruHCsJGc7fTKfZJKg+Q90F1iMfY=",
+			"path": "github.com/docker/distribution/manifest/schema1",
+			"revision": "a25b9ef0c9fe242ac04bb20d3a028442b7d266b6",
+			"revisionTime": "2017-04-05T23:17:09Z",
+			"version": "v2.6.1",
+			"versionExact": "v2.6.1"
+		},
+		{
+			"checksumSHA1": "rsnafP6fWFIUdA5FM13FPmIYblo=",
+			"path": "github.com/docker/distribution/manifest/schema2",
+			"revision": "a25b9ef0c9fe242ac04bb20d3a028442b7d266b6",
+			"revisionTime": "2017-04-05T23:17:09Z",
+			"version": "v2.6.1",
+			"versionExact": "v2.6.1"
+		},
+		{
+			"checksumSHA1": "Afja02fDYNayq+FvrfyAgPBtW6Y=",
+			"path": "github.com/docker/distribution/reference",
+			"revision": "a25b9ef0c9fe242ac04bb20d3a028442b7d266b6",
+			"revisionTime": "2017-04-05T23:17:09Z",
+			"version": "v2.6.1",
+			"versionExact": "v2.6.1"
+		},
+		{
+			"checksumSHA1": "cNp7rNReJHvdSfrIetXS9RGsLSo=",
+			"path": "github.com/docker/distribution/uuid",
+			"revision": "a25b9ef0c9fe242ac04bb20d3a028442b7d266b6",
+			"revisionTime": "2017-04-05T23:17:09Z",
+			"version": "v2.6.1",
+			"versionExact": "v2.6.1"
+		},
+		{
+			"checksumSHA1": "sNAU9ojYVUhO6dVXey6T3JhRQpw=",
+			"path": "github.com/docker/libtrust",
+			"revision": "aabc10ec26b754e797f9028f4589c5b7bd90dc20",
+			"revisionTime": "2016-07-08T17:25:13Z"
+		},
+		{
+			"checksumSHA1": "FtCtcD/Ys18frKJyeZLzkPY6J8g=",
+			"path": "github.com/gorilla/mux",
+			"revision": "deb579d6e030503f430978ee229008b9bc912d40",
+			"revisionTime": "2018-10-12T15:31:51Z"
+		},
+		{
+			"checksumSHA1": "r0pj5dMHCghpaQZ3f1BRGoKiSWw=",
+			"path": "github.com/hashicorp/go-version",
+			"revision": "b5a281d3160aa11950a6182bd9a9dc2cb1e02d50",
+			"revisionTime": "2018-08-24T00:43:55Z",
+			"version": "v1.0.0",
+			"versionExact": "v1.0.0"
+		},
+		{
+			"checksumSHA1": "r6ZMyP/HsdeToXIxvgP3ntL6Bds=",
+			"path": "github.com/konsorten/go-windows-terminal-sequences",
+			"revision": "5c8c8bd35d3832f5d134ae1e1e375b69a4d25242",
+			"revisionTime": "2018-10-04T22:41:46Z"
+		},
+		{
+			"checksumSHA1": "VnkNO/q6ZVTYCd/F7nmHosHC5a4=",
+			"path": "github.com/opencontainers/go-digest",
+			"revision": "c9281466c8b2f606084ac71339773efd177436e7",
+			"revisionTime": "2018-04-30T19:00:53Z"
+		},
+		{
+			"checksumSHA1": "wHJK2MbuCCBwndMy6qzRMCDuQ1E=",
+			"path": "github.com/urfave/cli",
+			"revision": "cfb38830724cc34fedffe9a2a29fb54fa9169cd1",
+			"revisionTime": "2017-08-11T01:42:03Z",
+			"version": "v1.20.0",
+			"versionExact": "v1.20.0"
+		},
+		{
+			"checksumSHA1": "BGm8lKZmvJbf/YOJLeL1rw2WVjA=",
+			"path": "golang.org/x/crypto/ssh/terminal",
+			"revision": "0c41d7ab0a0ee717d4590a44bcb987dfd9e183eb",
+			"revisionTime": "2018-10-15T00:23:17Z"
+		},
+		{
+			"checksumSHA1": "GtamqiJoL7PGHsN454AoffBFMa8=",
+			"path": "golang.org/x/net/context",
+			"revision": "49bb7cea24b1df9410e1712aa6433dae904ff66a",
+			"revisionTime": "2018-10-11T05:27:23Z"
+		},
+		{
+			"checksumSHA1": "SiJNkx+YGtq3Gtr6Ldu6OW83O+U=",
+			"path": "golang.org/x/sys/unix",
+			"revision": "fa43e7bc11baaae89f3f902b2b4d832b68234844",
+			"revisionTime": "2018-10-11T14:35:51Z"
+		},
+		{
+			"checksumSHA1": "Y7nctMxT58lRM78VtElPerhcnEs=",
+			"path": "golang.org/x/sys/windows",
+			"revision": "fa43e7bc11baaae89f3f902b2b4d832b68234844",
+			"revisionTime": "2018-10-11T14:35:51Z"
+		}
+	],
+	"rootPath": "github.com/rvadim/docker-registry-cleaner"
+}

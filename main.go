@@ -1,12 +1,15 @@
 package main
 
 import (
-	registry "docker-registry-cleaner/docker-registry-client"
 	"fmt"
+	"net/url"
 	"os"
 	"regexp"
 	"sort"
+	"strings"
 	"time"
+
+	"github.com/rvadim/docker-registry-cleaner/registry"
 
 	version "github.com/hashicorp/go-version"
 	"github.com/urfave/cli"
@@ -22,14 +25,14 @@ func main() {
 
 	app := cli.NewApp()
 	app.Name = "Docker Registry Cleaner"
-	app.Version = "0.1.0"
+	app.Version = "0.1.1"
 	app.Compiled = time.Now()
 
 	app.Flags = []cli.Flag{
 		cli.StringFlag{
-			Name:   "url",
-			Usage:  "Registry url",
-			EnvVar: "URL",
+			Name:   "path",
+			Usage:  "Regular docker path '<registry>/repo/image'",
+			EnvVar: "PATH",
 		},
 		cli.StringFlag{
 			Name:   "username, u",
@@ -40,11 +43,6 @@ func main() {
 			Name:   "password, p",
 			Usage:  "Registry password (optional)",
 			EnvVar: "PASSWORD",
-		},
-		cli.StringFlag{
-			Name:   "image, i",
-			Usage:  "Image name to delete ie 'development/nginx'",
-			EnvVar: "IMAGE",
 		},
 		cli.StringFlag{
 			Name:   "imageversion, iv",
@@ -66,14 +64,31 @@ func main() {
 	}
 
 	app.Action = func(c *cli.Context) error {
+		rawURL := c.String("path")
+		if !strings.HasPrefix(rawURL, "http") {
+			rawURL = fmt.Sprintf("https://%s", rawURL)
+		}
+		url, err := url.Parse(rawURL)
+		if err != nil {
+			fmt.Printf("Unable to parse url: %s", err)
+			return cli.ShowAppHelp(c)
+		}
+		path := url.Path
+		if strings.HasPrefix(path, "/") {
+			path = path[1:]
+		}
+
+		fmt.Printf("Prased hostname: %s\n", url.Hostname())
+		fmt.Printf("Prased protocol: %s\n", url.Scheme)
+		fmt.Printf("Prased image: %s\n", path)
 
 		r := registryParams{
-			URL:      c.String("url"),
+			URL:      fmt.Sprintf("%s://%s", url.Scheme, url.Hostname()),
 			username: c.String("username"),
 			password: c.String("password"),
 		}
 
-		imageName := c.String("image")
+		imageName := path
 		regxVersion := c.String("imageversion")
 		numKeep := c.Int("keep")
 
