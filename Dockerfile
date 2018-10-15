@@ -5,6 +5,8 @@ RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o docker-registry-c
 
 FROM alpine:latest  
 RUN apk --no-cache add ca-certificates
+COPY CA.crt /usr/local/share/ca-certificates/CA.crt
+RUN update-ca-certificates 
 WORKDIR /root/
 COPY --from=0 /go/src/github.com/rvadim/docker-registry-cleaner/docker-registry-cleaner .
 ENTRYPOINT ["/root/docker-registry-cleaner"]
