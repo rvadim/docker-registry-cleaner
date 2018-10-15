@@ -1,9 +1,11 @@
-FROM alpine:3.5
+FROM golang:1.11-alpine
+WORKDIR /go/src/github.com/rvadim/docker-registry-cleaner
+COPY . .
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o docker-registry-cleaner .
 
-ADD https://github.com/emailbob/docker-registry-cleaner/releases/download/latest-linux/docker-registry-cleaner /docker-registry-cleaner
-
-RUN apk add --update ca-certificates && \
-    rm -rf /var/cache/apk/* && \
-    chmod +x /docker-registry-cleaner
-
-CMD ["/docker-registry-cleaner"]
+FROM alpine:latest  
+RUN apk --no-cache add ca-certificates
+WORKDIR /root/
+COPY --from=0 /go/src/github.com/rvadim/docker-registry-cleaner/docker-registry-cleaner .
+ENTRYPOINT ["/root/docker-registry-cleaner"]
+CMD ["/root/docker-registry-cleaner"]
